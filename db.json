@@ -1,0 +1,25 @@
+{
+	"respuestas": {
+		"nombre_sistema": "En qué puedo ayudarlo.",
+		"cuál es tu nombre": "mi nombre es nombre_sistema.",
+		"donde naciste": "naci en el cuarto de mi creador devlusaja.",
+		"hola": "Hola señor.",
+		"buenos días": "Hola, muy buenos días.",
+		"buenas tardes": "Que tal, buenas tardes.",
+		"buenas noches": "Que tenga muy buenas noches.",
+		"estás": "Digame",
+		"cuál es mi agenda": "No la hemos definido.",
+		"saluda a los demás": "Hola humanos, soy un asistente personal llamado nombre_sistema.",
+		"ya me voy": "Hasta luego, fue un gusto hablar contigo.",
+		"puedes entenderme": "Tengo un diccionario de palabras reducido, pero haré mi mayor esfuerzo.",
+		"de qué género eres": "soy del genero genero_sistema, pero no soy un humano.",
+		"cuál es tu color favorito": "mi color favorito es el verde.",
+		"cuál es tu comida favorita": "me gustan los Bites y los Bytes.",
+		"cuéntame un chiste": "Perdona, ¿estoy bien maquillada?; No, todavía se te ve la cara.. jajajajaja.",
+		"estás durmiendo" : "¡no! ¡me estoy entrenando para cuando me muera!",
+		"te despertaste" : "¡no! ¡soy sonámbulo!",
+		"dónde estás" : "¡en el polo norte! un tormado me voló la casa hasta allá!",
+		"llegaste" : "Noo... estás viendo un holograma!"
+	},
+	"default": "Lo siento, no pude entenderte."
+}
