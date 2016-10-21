@@ -50,7 +50,7 @@
 		        	if (data[2] != '') {
 		            	respuesta_sistema = data[2];
 		        	}
-		        	this.HablarSistema(respuesta_sistema);
+		        	Assistant.prototype.HablarSistema(respuesta_sistema);
 		    	}
 		    });
 		},
