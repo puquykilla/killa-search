@@ -4,6 +4,7 @@
 		var self = this;
 		self.system_name = 'Luna',
 		self.system_gender = 'femenino',
+		self.voice = null,
 		self.recognition,
 		self.recognizing = false,
 
@@ -26,18 +27,9 @@
 
 		self.speak = function(system_response) {
 			var system_voice = new SpeechSynthesisUtterance();
-
-			window.speechSynthesis.onvoiceschanged = function() {
-
-				var voices = window.speechSynthesis.getVoices();
-				console.log("Voces: ", voices);
-				system_voice.voice = voices.filter(function(voice) { return voice.name == 'Agnes'; })[0];
-				console.log(system_voice.voice);
-				system_voice.text = system_response;
-				window.speechSynthesis.speak(system_voice);
-
-				console.log('loading voices');
-			};
+			system_voice.voice = self.voice;				
+			system_voice.text = system_response;
+			window.speechSynthesis.speak(system_voice);
 		},
 
 		self.wikipediaSearch = function(incoming_message, system_response) {
@@ -97,6 +89,12 @@
 
 // The Webkit was tested in GoogleChrome version 54.0.2840.59 (64-bit)
 var assistant = new Assistant();
+window.speechSynthesis.onvoiceschanged = function() {
+	console.log('loading voices');
+	var voices = window.speechSynthesis.getVoices();
+	assistant.voice = voices.filter(function(voice) { return voice.name == 'Monica'; })[0];
+}
+
 if (!('webkitSpeechRecognition' in window)) {
 	var msg = '¡API webkitSpeechRecognition not supported!';
 	alert(msg);
