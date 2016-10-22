@@ -81,6 +81,9 @@
 					self.speak(system_response);
 				}
 			});
+		},
+		self.stop = function() {
+			window.speechSynthesis.cancel();
 		}
 	}
 
@@ -144,4 +147,8 @@ function talk() {
 		assistant.recognizing = true;
 		document.getElementById('hablar').innerHTML = 'Hablando';
 	}
+}
+
+function stop() {
+	assistant.stop();
 }
