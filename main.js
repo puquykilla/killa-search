@@ -2,32 +2,29 @@
 	self.Assistant = function() {
 		// We can give the name of the system before any sentence
 		var self = this;
-		self.system_name = 'Luna';
-		self.system_gender = 'femenino';
-		self.recognition;
-		self.recognizing = false;
-	}
-
-	self.Assistant.prototype = {
+		self.system_name = 'Luna',
+		self.system_gender = 'femenino',
+		self.recognition,
+		self.recognizing = false,
 
 		// This function formats the response to conform with the system name before each word
-		responseFormat: function(response) {
+		self.responseFormat = function(response) {
 			var formated_response = null;
 			console.log(self.system_name);
 			return formated_response = self.system_name + ' ' + response;
 		},
 
 		// Function that allows you to place the name of the system within the responses or keys.
-		systemNameFormat: function(value) {
+		self.systemNameFormat = function(value) {
 			return value.replace('system_name', self.system_name);
 		},
 
 		// Function that allows you to place the genre system within the responses or keys.
-		genderSystemFormat: function(value) {
+		self.genderSystemFormat = function(value) {
 			return value.replace('system_gender', self.system_gender);
 		},
 
-		speak: function(system_response) {
+		self.speak = function(system_response) {
 			var system_voice = new SpeechSynthesisUtterance();
 			var voices = window.speechSynthesis.getVoices();
 			system_voice.voice = voices[0];
@@ -35,7 +32,7 @@
 			window.speechSynthesis.speak(system_voice);
 		},
 
-		wikipediaSearch: function(incoming_message, system_response) {
+		self.wikipediaSearch = function(incoming_message, system_response) {
 			var Wikipedia = 'http://es.wikipedia.org/w/api.php';
 			$.ajax({
 				url: Wikipedia,
@@ -49,13 +46,13 @@
 					if (data[2] != '') {
 						system_response = data[2];
 					}
-					Assistant.prototype.speak(system_response);
+					self.speak(system_response);
 				}
 			});
 		},
 
 		// This function allows the system to give us a response reading a json db
-		response: function(incoming_message) {
+		self.response = function(incoming_message) {
 			var system_response;
 			var incoming_message = incoming_message.toLowerCase();
 			var JsonDB = 'db.json';
@@ -64,9 +61,9 @@
 			// Read a json file where are the responses
 			$.getJSON( JsonDB, function( data ) {
 			  $.each( data.responses, function( key, value ) {
-				if (incoming_message === Assistant.prototype.responseFormat(key) || incoming_message === key ) {
-					value = Assistant.prototype.systemNameFormat(value);
-					value = Assistant.prototype.genderSystemFormat(value);
+				if (incoming_message === self.responseFormat(key) || incoming_message === key ) {
+					value = self.systemNameFormat(value);
+					value = self.genderSystemFormat(value);
 					system_response = value;
 					response_default = false;
 					return false;
@@ -79,13 +76,14 @@
 			.done( function() {
 				// Send voice response
 				if (response_default) {
-					Assistant.prototype.wikipediaSearch(incoming_message, system_response);
+					self.wikipediaSearch(incoming_message, system_response);
 				} else {
-					Assistant.prototype.speak(system_response);
+					self.speak(system_response);
 				}
 			});
 		}
 	}
+
 })();
 
 
@@ -93,7 +91,7 @@
 var assistant = new Assistant();
 console.log(assistant.system_name);
 if (!('webkitSpeechRecognition' in window)) {
-	var msg = '¡API webkitSpeechRecognition not supported!'; 
+	var msg = '¡API webkitSpeechRecognition not supported!';
 	alert(msg);
 } else {
 	assistant.recognition = new webkitSpeechRecognition();
