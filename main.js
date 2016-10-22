@@ -4,7 +4,9 @@
 		var self = this;
 		self.system_name = 'Luna',
 		self.system_gender = 'femenino',
-		self.voice = null,
+		self.system_voice = new SpeechSynthesisUtterance(),
+		self.system_voice.voice = null,
+		self.system_voice.text = null,
 		self.recognition,
 		self.recognizing = false,
 
@@ -26,10 +28,8 @@
 		},
 
 		self.speak = function(system_response) {
-			var system_voice = new SpeechSynthesisUtterance();
-			system_voice.voice = self.voice;				
-			system_voice.text = system_response;
-			window.speechSynthesis.speak(system_voice);
+			self.system_voice.text = system_response;
+			window.speechSynthesis.speak(self.system_voice);
 		},
 
 		self.wikipediaSearch = function(incoming_message, system_response) {
@@ -95,7 +95,7 @@ var assistant = new Assistant();
 window.speechSynthesis.onvoiceschanged = function() {
 	console.log('loading voices');
 	var voices = window.speechSynthesis.getVoices();
-	assistant.voice = voices.filter(function(voice) { return voice.name == 'Monica'; })[0];
+	assistant.system_voice.voice = voices.filter(function(voice) { return voice.name == 'Monica'; })[0];
 }
 
 if (!('webkitSpeechRecognition' in window)) {
