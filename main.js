@@ -26,10 +26,18 @@
 
 		self.speak = function(system_response) {
 			var system_voice = new SpeechSynthesisUtterance();
-			var voices = window.speechSynthesis.getVoices();
-			system_voice.voice = voices[0];
-			system_voice.text = system_response;
-			window.speechSynthesis.speak(system_voice);
+
+			window.speechSynthesis.onvoiceschanged = function() {
+
+				var voices = window.speechSynthesis.getVoices();
+				console.log("Voces: ", voices);
+				system_voice.voice = voices.filter(function(voice) { return voice.name == 'Agnes'; })[0];
+				console.log(system_voice.voice);
+				system_voice.text = system_response;
+				window.speechSynthesis.speak(system_voice);
+
+				console.log('loading voices');
+			};
 		},
 
 		self.wikipediaSearch = function(incoming_message, system_response) {
