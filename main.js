@@ -18,12 +18,12 @@
 		},
 
 		// Function that allows you to place the name of the system within the responses or keys.
-		self.systemNameFormat = function(value) {
+		self.nameFormat = function(value) {
 			return value.replace('system_name', self.system_name);
 		},
 
 		// Function that allows you to place the genre system within the responses or keys.
-		self.genderSystemFormat = function(value) {
+		self.genderFormat = function(value) {
 			return value.replace('system_gender', self.system_gender);
 		},
 
@@ -62,8 +62,8 @@
 			$.getJSON( JsonDB, function( data ) {
 			  $.each( data.responses, function( key, value ) {
 				if (incoming_message === self.responseFormat(key) || incoming_message === key ) {
-					value = self.systemNameFormat(value);
-					value = self.genderSystemFormat(value);
+					value = self.nameFormat(value);
+					value = self.genderFormat(value);
 					system_response = value;
 					response_default = false;
 					return false;
@@ -135,7 +135,7 @@ if (!('webkitSpeechRecognition' in window)) {
 	// This callback is called when the system throw a error
 	assistant.recognition.onerror = function(event) {
 		console.log('Speech recognition error detected: ' + event.error);
-		console.log('Aditional information: ' + event.error);
+		console.log('Aditional error information: ' + event.error);
 	}
 
 	// This callback is called when the system finishes speaking
@@ -146,23 +146,51 @@ if (!('webkitSpeechRecognition' in window)) {
 	}
 }
 
+// variables for system status
+var talk_status = false;
+var pause_status = false;
+var resume_status = false;
+
 // This function allows us to talk to the system
 function talk() {
 	if (assistant.recognizing == false) {
 		assistant.recognition.start();
 		assistant.recognizing = true;
 		document.getElementById('talk').innerHTML = 'talking';
+		talk_status = true;
 	}
 }
 
+// This function allows us to talk to the system
 function stop() {
-	assistant.stop();
+	if (talk_status === true) {
+		console.log('The voice of the system halted.');
+		assistant.stop();
+	} else {
+		console.log('The system is not talking.');
+	}
 }
 
+// This function allows us pause the voice of system
 function pause() {
-	assistant.pause();
+	if (pause_status === false && talk_status === true) {
+		console.log('The voice of the system is paused.');
+		assistant.pause();
+		pause_status = true;
+		resume_status = false;
+	} else {
+		console.log('The voice of the system is already paused.');
+	}
 }
 
+// This feature allows the system to resume the voice
 function resume() {
-	assistant.resume();
+	if (resume_status === false && pause_status === true) {
+		console.log('The voice of the system is resumed.');
+		assistant.resume();
+		pause_status = false;
+		resume_status = true;
+	} else {
+		console.log('The voice of the system is already resumed.');
+	}
 }
