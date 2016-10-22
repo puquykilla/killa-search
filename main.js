@@ -166,6 +166,9 @@ function stop() {
 	if (talk_status === true) {
 		console.log('The voice of the system halted.');
 		assistant.stop();
+		talk_status = false;
+		pause_status = false;
+		resume_status = false;
 	} else {
 		console.log('The system is not talking.');
 	}
