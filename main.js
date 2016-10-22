@@ -84,6 +84,12 @@
 		},
 		self.stop = function() {
 			window.speechSynthesis.cancel();
+		},
+		self.pause = function() {
+			window.speechSynthesis.pause();
+		},
+		self.resume = function() {
+			window.speechSynthesis.resume();
 		}
 	}
 
@@ -135,7 +141,7 @@ if (!('webkitSpeechRecognition' in window)) {
 	// This callback is called when the system finishes speaking
 	assistant.recognition.onend = function() {
 		assistant.recognizing = false;
-		document.getElementById('hablar').innerHTML = 'Hablar';
+		document.getElementById('talk').innerHTML = 'talk';
 		console.log('The system finished listening.');
 	}
 }
@@ -145,10 +151,18 @@ function talk() {
 	if (assistant.recognizing == false) {
 		assistant.recognition.start();
 		assistant.recognizing = true;
-		document.getElementById('hablar').innerHTML = 'Hablando';
+		document.getElementById('talk').innerHTML = 'talking';
 	}
 }
 
 function stop() {
 	assistant.stop();
+}
+
+function pause() {
+	assistant.pause();
+}
+
+function resume() {
+	assistant.resume();
 }
