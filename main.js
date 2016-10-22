@@ -10,8 +10,8 @@
 		// This function formats the response to conform with the system name before each word
 		self.responseFormat = function(response) {
 			var formated_response = null;
-			console.log(self.system_name);
-			return formated_response = self.system_name + ' ' + response;
+			formated_response = self.system_name + ' ' + response;
+			return formated_response.toLowerCase();
 		},
 
 		// Function that allows you to place the name of the system within the responses or keys.
@@ -89,7 +89,6 @@
 
 // The Webkit was tested in GoogleChrome version 54.0.2840.59 (64-bit)
 var assistant = new Assistant();
-console.log(assistant.system_name);
 if (!('webkitSpeechRecognition' in window)) {
 	var msg = '¡API webkitSpeechRecognition not supported!';
 	alert(msg);
