@@ -14,7 +14,8 @@
 		self.responseFormat = function(response) {
 			var formated_response = null;
 			formated_response = self.system_name + ' ' + response;
-			return formated_response.toLowerCase();
+			formated_response_inverted = response + ' ' + self.system_name;
+			return new Array(formated_response.toLowerCase(), formated_response_inverted.toLowerCase()) ;
 		},
 
 		// Function that allows you to place the name of the system within the responses or keys.
@@ -61,7 +62,8 @@
 			// Read a json file where are the responses
 			$.getJSON( JsonDB, function( data ) {
 			  $.each( data.responses, function( key, value ) {
-				if (incoming_message === self.responseFormat(key) || incoming_message === key ) {
+			  	formatted_responses = self.responseFormat(key);
+				if (incoming_message === formatted_responses[0] || incoming_message === formatted_responses[1] || incoming_message === key ) {
 					value = self.nameFormat(value);
 					value = self.genderFormat(value);
 					system_response = value;
