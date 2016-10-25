@@ -159,7 +159,7 @@ function talk() {
 	if (assistant.recognizing == false) {
 		assistant.recognition.start();
 		assistant.recognizing = true;
-		document.getElementById('talk').innerHTML = 'talk';
+		// document.getElementById('talk').innerHTML = 'talk';
 		$('.mic').addClass('is-animated');
 		talk_status = true;
 	}
