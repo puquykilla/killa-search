@@ -233,8 +233,8 @@ body {
     opacity: 0
 }
 
-.is-animated .c-ball__pulse::after,
-.is-animated .c-ball__pulse::before {
+.c-ball__pulse::after,
+.c-ball__pulse::before {
     -webkit-animation: pulse-2 1.4s infinite;
     animation: pulse-2 1.4s infinite
 }
@@ -244,8 +244,8 @@ body {
     height: 100px;
     margin-top: -50px;
     margin-left: -50px;
-    -webkit-animation-delay: .2s;
-    animation-delay: .2s;
+    -webkit-animation-delay: .52s;
+    animation-delay: .52s;
 }
 .c-ball__pulse::after {
     width: 120px;
