@@ -233,8 +233,8 @@ body {
     opacity: 0
 }
 
-.c-ball__pulse::after,
-.c-ball__pulse::before {
+.is-animated .c-ball__pulse::after,
+.is-animated .c-ball__pulse::before {
     -webkit-animation: pulse-2 1.4s infinite;
     animation: pulse-2 1.4s infinite
 }

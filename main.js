@@ -144,6 +144,7 @@ if (!('webkitSpeechRecognition' in window)) {
 	assistant.recognition.onend = function() {
 		assistant.recognizing = false;
 		document.getElementById('talk').innerHTML = 'talk';
+		$('.mic').removeClass('is-animated');
 		console.log('The system finished listening.');
 	}
 }
@@ -159,6 +160,7 @@ function talk() {
 		assistant.recognition.start();
 		assistant.recognizing = true;
 		document.getElementById('talk').innerHTML = 'talking';
+		$('.mic').addClass('is-animated');
 		talk_status = true;
 	}
 }
@@ -199,3 +201,10 @@ function resume() {
 		console.log('The voice of the system is already resumed.');
 	}
 }
+
+
+$(document).ready(function(){
+	$('.mic').on('click', function(){
+		talk();
+	});
+});
