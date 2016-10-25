@@ -14,7 +14,8 @@
 
 	<div class="wrapper height-100 text-align-center">
 		<header>
-			<div class="container">
+			<div class="helper"></div><!--
+			--><div class="container display-inline">
 				<div class="display-table">
 					<div class="display-table-cell align-left">
 						<a href="" title="">
@@ -32,27 +33,30 @@
 				</div>
 			</div>
 		</header>
-		<div class="container">
-			<div class="row">
-				<textarea id="texto" cols="30" rows="10" class="input"></textarea>
-			</div>
+		<main>
+			<div class="container">
 
-			<div class="row">
-				<button id="talk" onclick="talk()" class="btn btn-white btn-block">Talk</button>
-			</div>
+				<div class="row">
+					<div id="texto" class="spoken">LO QUE SE DICE</div>
+				</div>
 
-			<div class="buttons row">
-				<button id="silent" onclick="stop()" class="btn btn-circle">
-					<div class="helper"></div><i class="icon-loop display-inline"></i>
-				</button><!--
-				--><button id="pause" onclick="pause()" class="btn btn-circle">
-				<div class="helper"></div><i class="icon-pause2 display-inline"></i>
-				</button><!--
-				--><button id="silent" onclick="resume()" class="btn btn-circle">
-				<div class="helper"></div><i class="icon-play display-inline"></i>
-				</button>
+				<div class="row">
+					<button id="talk" onclick="talk()" class="btn btn-white btn-block">Talk</button>
+				</div>
+
+				<div class="buttons row">
+					<button id="silent" onclick="stop()" class="btn btn-circle">
+						<div class="helper"></div><i class="icon-loop display-inline"></i>
+					</button><!--
+					--><button id="pause" onclick="pause()" class="btn btn-circle">
+						<div class="helper"></div><i class="icon-pause2 display-inline"></i>
+					</button><!--
+					--><button id="silent" onclick="resume()" class="btn btn-circle">
+						<div class="helper"></div><i class="icon-play display-inline"></i>
+					</button>
+				</div>
 			</div>
-		</div>
+		</main>
 	</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
