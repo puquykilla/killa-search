@@ -120,6 +120,8 @@ body {
 
 /*BUTTON*/
 
+.buttons { padding: 30px 0; }
+
 .buttons .btn { margin: 0 12px; }
 
 .buttons .btn:first-child { margin-left: 0; }
@@ -147,13 +149,15 @@ body {
 
 .btn-circle {
   background-color: transparent;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   border-radius: 50%;
   color: #fff;
-  height: 66px;
-  width: 66px;
+  height: 80px;
+  width: 80px;
   text-align: center;
 }
+
+.btn-circle i { font-size: 2.1rem; }
 
 .btn-white {
   background-color: #fff;
@@ -198,3 +202,101 @@ body {
   margin-bottom: 40px;
   font-size: 4rem;
 }
+
+
+
+/*PULSE*/
+
+.c-ball__pulse {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.c-ball__pulse {
+    position: absolute;
+    z-index: 2
+}
+
+.c-ball__pulse::after,
+.c-ball__pulse::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(255, 255, 255, .4);
+    border-radius: 50%;
+    -webkit-transform: scale(.35);
+    -ms-transform: scale(.35);
+    transform: scale(.35);
+    opacity: 0
+}
+
+.c-ball__pulse::after,
+.c-ball__pulse::before {
+    -webkit-animation: pulse-2 1.4s infinite;
+    animation: pulse-2 1.4s infinite
+}
+
+.c-ball__pulse::before {
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    -webkit-animation-delay: .2s;
+    animation-delay: .2s;
+}
+.c-ball__pulse::after {
+    width: 120px;
+    height: 120px;
+    margin-top: -60px;
+    margin-left: -60px;
+    border-color: rgba(255, 255, 255, .2);
+}
+
+@-webkit-keyframes pulse-2 {
+    0% {
+        -webkit-transform: scale(.9, .9);
+        transform: scale(.9, .9);
+        opacity: 0
+    }
+    60% {
+        opacity: 1
+    }
+    100% {
+        -webkit-transform: scale(1.2, 1.2);
+        transform: scale(1.2, 1.2);
+        opacity: 0;
+    }
+}
+@keyframes pulse-2 {
+    0% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 0
+    }
+    60% {
+        opacity: 1
+    }
+    100% {
+        -webkit-transform: scale(1.2, 1.2);
+        transform: scale(1.2, 1.2);
+        opacity: 0;
+    }
+}
+
+
+/*MIC*/
+
+.mic {
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+.mic i { font-size: 8rem; }
+
+.mic:hover { opacity: .8; }
+
+.mic:active { opacity: .9; }
