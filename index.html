@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 
-	<title>Project Moon</title>
+	<title>Moon</title>
 
 	<link rel="stylesheet" href="assets/css/vendors/normalize.css" media="screen" >
 	<link rel="stylesheet" href="assets/css/vendors/icomoon.css" media="screen" >
@@ -11,30 +11,47 @@
 
 </head>
 <body>
+
 	<div class="wrapper height-100 text-align-center">
-		<div class="helper"></div>
-		<div class="display-inline">
-				<div class="container">
-					<div class="row">
-						<textarea id="texto" cols="30" rows="10" class="input"></textarea>
+		<header>
+			<div class="container">
+				<div class="display-table">
+					<div class="display-table-cell align-left">
+						<a href="" title="">
+							<img src="" alt="" />
+						</a>
 					</div>
-
-					<div class="row">
-						<button id="talk" onclick="talk()" class="btn btn-white btn-block">Talk</button>
+					<div class="display-table-cell align-right">
+						<nav>
+							<ul>
+								<li><a href="#" title="Home">RESULTS</a></li>
+								<li><a href="#" title="Contact">CONTACT</a></li>
+							</ul>
+						</nav>
 					</div>
+				</div>
+			</div>
+		</header>
+		<div class="container">
+			<div class="row">
+				<textarea id="texto" cols="30" rows="10" class="input"></textarea>
+			</div>
 
-					<div class="buttons row">
-						<button id="silent" onclick="stop()" class="btn btn-circle">
-							<div class="helper"></div><i class="icon-loop display-inline"></i>
-						</button><!--
-						--><button id="pause" onclick="pause()" class="btn btn-circle">
-						<div class="helper"></div><i class="icon-pause2 display-inline"></i>
-					</button><!--
-					--><button id="silent" onclick="resume()" class="btn btn-circle">
-					<div class="helper"></div><i class="icon-play display-inline"></i>
+			<div class="row">
+				<button id="talk" onclick="talk()" class="btn btn-white btn-block">Talk</button>
+			</div>
+
+			<div class="buttons row">
+				<button id="silent" onclick="stop()" class="btn btn-circle">
+					<div class="helper"></div><i class="icon-loop display-inline"></i>
+				</button><!--
+				--><button id="pause" onclick="pause()" class="btn btn-circle">
+				<div class="helper"></div><i class="icon-pause2 display-inline"></i>
+				</button><!--
+				--><button id="silent" onclick="resume()" class="btn btn-circle">
+				<div class="helper"></div><i class="icon-play display-inline"></i>
 				</button>
 			</div>
-				</div>
 		</div>
 	</div>
 

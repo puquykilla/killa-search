@@ -6,7 +6,33 @@
   box-sizing: border-box;
 }
 
+
+/*NAV*/
+
+nav {}
+nav ul li {
+  display: inline-block;
+  list-style: none;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 0 6px;
+}
+
+nav ul li:first-child a { padding-left: 0; }
+
+nav ul li:last-child a { padding-right: 0; }
+
+
+
 /*UTILITIES*/
+
+.align-left { text-align: left; }
+
+.align-right { text-align: right; }
+
+.align-center { text-align: center; }
 
 .disabled, [disabled] { pointer-events: none; }
 
@@ -25,6 +51,11 @@
   display: inline-block;
   vertical-align: middle;
 }
+
+.display-table { display-table; }
+
+.display-table-cell { display-table-cell; }
+
 
 
 /*BODY*/
@@ -100,7 +131,8 @@ body {
 /*CONTAINER*/
 
 .container {
-  max-width: 320px;
+  margin: 0 auto;
+  max-width: 1200px;
   width: 100%;
 }
 
