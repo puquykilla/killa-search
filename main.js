@@ -143,7 +143,7 @@ if (!('webkitSpeechRecognition' in window)) {
 	// This callback is called when the system finishes speaking
 	assistant.recognition.onend = function() {
 		assistant.recognizing = false;
-		document.getElementById('talk').innerHTML = 'talk';
+		document.getElementById('talk').innerHTML = '';
 		$('.mic').removeClass('is-animated');
 		console.log('The system finished listening.');
 	}
@@ -159,7 +159,7 @@ function talk() {
 	if (assistant.recognizing == false) {
 		assistant.recognition.start();
 		assistant.recognizing = true;
-		document.getElementById('talk').innerHTML = 'talking';
+		document.getElementById('talk').innerHTML = 'talk';
 		$('.mic').addClass('is-animated');
 		talk_status = true;
 	}
