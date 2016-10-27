@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const HolaMundo = (props) => (
-  <h1>React funciona</h1>
-)
+class App extends React.Component {
+  render(){
+    return <div>Hola mundo!!</div>
+  }
+}
 
-ReactDOM.render(<HolaMundo />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));

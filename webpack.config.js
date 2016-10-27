@@ -16,6 +16,13 @@ module.exports = {
         exclude: /node_modules/,
         loaders: ['babel']
       }
-    ]
+    ],
+    plugins: {
+      
+    }
+  },
+  devServer: {
+    contentBase: outPath,
+    port: 3000
   }
 }
