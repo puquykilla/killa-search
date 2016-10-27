@@ -1,22 +1,20 @@
+var path = require('path');
+var entryPath = path.join(__dirname, 'src'),
+    outPath = path.join(__dirname, 'dist');
+
 module.exports = {
-  entry: './main.js',
+  entry: [ path.join(entryPath, 'app.js') ],
   output: {
-    path: './',
-    filename: 'index.js'
-  },
-  devServer: {
-    inline: true,
-    port: 3333
+    path: outPath,
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
+        include: entryPath,
         exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['es2015', 'react']
-        }
+        loaders: ['babel']
       }
     ]
   }
