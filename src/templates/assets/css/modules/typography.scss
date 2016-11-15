@@ -1,0 +1,83 @@
+
+// TYPOGRAPHY
+// ----------------------------------
+
+html {
+  font-size: 10px;
+  line-height: 1.42857143;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  color: gray;
+  font-size: 1.5rem;
+  font-family: 'Flama';
+  font-weight: 200;
+}
+
+a {
+  &:hover {
+    color: lighten($color--global, 8%);
+  }
+  &:active {
+    color: darken($color--global, 5%);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: darken($color--global, 5%);
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  font-size: 4.2rem;
+}
+h2 {
+  font-size: 3.2rem;
+}
+h3 {
+  font-size: 2.2rem;
+}
+h4 {
+  font-size: 1.6rem;
+}
+h5 {
+  font-size: 1.2rem;
+}
+h6 {
+  font-size: 1rem;
+}
+p {
+  margin: 0 0 1rem;
+}
+
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4.6rem;
+  }
+  h2 {
+    font-size: 3.6rem;
+  }
+  h3 {
+    font-size: 2.6rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  h5 {
+    font-size: 1.6rem;
+  }
+  h6 {
+    font-size: 1.2rem;
+  }
+}
+
+b, strong { font-weight: bold; }
+
+small {
+  font-size: .9rem;
+  line-height: .9;
+}

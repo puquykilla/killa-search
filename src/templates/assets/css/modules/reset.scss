@@ -1,0 +1,72 @@
+// RESET
+// ----------------------------------
+
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+
+html, body, div, span, a, img, h1, h2, p, ul, li {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  font-style: normal;
+  line-height: inherit;
+  list-style: none;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-decoration: none;
+  text-transform: none;
+  vertical-align: baseline;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+}
+
+svg:not(:root) { overflow: hidden; }
+
+a[href^=tel] {
+  text-decoration:none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input { -webkit-user-select: auto; }
+
+img { -ms-interpolation-mode: bicubic; }
+
+:link, :hover, :active, :focus, :visited { outline: 0; }
+::-webkit-selection {
+  background: #ccc;
+  color: white;
+}
+
+::-moz-selection {
+  background: #ccc;
+  color: white;
+}
+
+::selection {
+  background: #ccc;
+  color: white;
+}
+
+textarea,
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+  -webkit-appearance: none;
+}
+
+a, button, input { color: inherit; font: inherit; }

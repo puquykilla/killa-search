@@ -1,0 +1,40 @@
+.btn {
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-ln {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.btn-circle {
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  height: 80px;
+  width: 80px;
+  text-align: center;
+}
+
+.btn-circle i { font-size: 2.1rem; }
+
+.btn-white {
+  background-color: #fff;
+  border-radius: 40px;
+  color: #ff796f;
+  font-size: .9em;
+  letter-spacing: 1px;
+  padding: 15px 40px;
+  box-shadow: 0 0 10px #ff675d;
+}
