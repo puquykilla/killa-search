@@ -12,7 +12,7 @@ cd killa-search
 ## Installation
 You need to install Node.js and then development tools. Node.js comes with a package manager called [npm](http://npmjs.org) for installing NodeJS applications and libraries.
 
-* [Install node.js](http://nodejs.org/download/)
+* [Install node.js](http://nodejs.org)
 ```
 npm install
 gulp
